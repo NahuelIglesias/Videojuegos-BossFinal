@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://environment/Platform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://entities/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Main.gd" type="Script" id=3]
+[ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/Player2.tscn" type="PackedScene" id=5]
+
+[node name="Main" type="Node"]
+script = ExtResource( 3 )
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Platform" parent="Environment" instance=ExtResource( 1 )]
+position = Vector2( 107, 523 )
+
+[node name="Platform2" parent="Environment" instance=ExtResource( 1 )]
+position = Vector2( 255, 523 )
+
+[node name="Platform3" parent="Environment" instance=ExtResource( 1 )]
+position = Vector2( 342, 523 )
+
+[node name="Platform4" parent="Environment" instance=ExtResource( 1 )]
+position = Vector2( 513, 571 )
+
+[node name="Platform5" parent="Environment" instance=ExtResource( 1 )]
+position = Vector2( 678, 523 )
+
+[node name="Platform6" parent="Environment" instance=ExtResource( 1 )]
+position = Vector2( 821, 523 )
+
+[node name="Platform7" parent="Environment" instance=ExtResource( 1 )]
+position = Vector2( 914, 523 )
+
+[node name="Platform8" parent="Environment" instance=ExtResource( 1 )]
+position = Vector2( 124, 387 )
+
+[node name="Platform9" parent="Environment" instance=ExtResource( 1 )]
+position = Vector2( 894, 389 )
+
+[node name="Platform10" parent="Environment" instance=ExtResource( 1 )]
+position = Vector2( 447, 332 )
+
+[node name="Platform11" parent="Environment" instance=ExtResource( 1 )]
+position = Vector2( 575, 332 )
+
+[node name="Platform12" parent="Environment" instance=ExtResource( 1 )]
+position = Vector2( 948, 238 )
+
+[node name="Platform13" parent="Environment" instance=ExtResource( 1 )]
+position = Vector2( 74, 243 )
+
+[node name="Player" parent="Environment" instance=ExtResource( 2 )]
+position = Vector2( -12, 4 )
+
+[node name="Camera2D" type="Camera2D" parent="Environment/Player"]
+position = Vector2( 525, 297 )
+
+[node name="Player2" parent="Environment" instance=ExtResource( 5 )]
+position = Vector2( 752, 430 )
+
+[node name="Wall" parent="Environment" instance=ExtResource( 4 )]
+position = Vector2( 46, 319 )
+
+[node name="Wall2" parent="Environment" instance=ExtResource( 4 )]
+position = Vector2( 975, 316 )
+
+[node name="Wall3" parent="Environment" instance=ExtResource( 4 )]
+position = Vector2( 46, 195 )
+
+[node name="Wall4" parent="Environment" instance=ExtResource( 4 )]
+position = Vector2( 975, 197 )
