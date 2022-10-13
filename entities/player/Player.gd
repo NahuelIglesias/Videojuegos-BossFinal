@@ -21,6 +21,7 @@ export (float) var FRICTION_WEIGHT:float = 0.1
 export (int) var gravity = 30
 export (String) var move_right_input = "move_right"
 export (String) var move_left_input = "move_left"
+export (String) var jump_input = "jump"
 
 var projectile_container
 
