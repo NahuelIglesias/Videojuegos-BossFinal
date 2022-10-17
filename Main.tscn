@@ -66,21 +66,6 @@ position = Vector2( 46, 195 )
 position = Vector2( 975, 197 )
 
 [node name="Player" parent="Environment" instance=ExtResource( 5 )]
-max_health = null
-ACCELERATION = null
-H_SPEED_LIMIT = null
-jump_speed = null
-FRICTION_WEIGHT = null
-gravity = null
-move_right_input = null
-move_left_input = null
-jump_input = null
 
 [node name="Player2" parent="Environment" instance=ExtResource( 2 )]
 position = Vector2( 473, 14 )
-max_health = null
-ACCELERATION = null
-H_SPEED_LIMIT = null
-jump_speed = null
-FRICTION_WEIGHT = null
-gravity = null
