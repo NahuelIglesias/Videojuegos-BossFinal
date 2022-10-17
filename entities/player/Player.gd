@@ -13,7 +13,7 @@ const SNAP_DIRECTION := Vector2.DOWN
 const SNAP_LENGTH := 32.0
 const SLOPE_THRESHOLD := deg2rad(60)
 
-export (int) var max_health = 20
+export (int) var max_health = 3
 export (float) var ACCELERATION:float = 30.0
 export (float) var H_SPEED_LIMIT:float = 400.0
 export (int) var jump_speed = 750
@@ -21,6 +21,7 @@ export (float) var FRICTION_WEIGHT:float = 0.1
 export (int) var gravity = 30
 export (String) var move_right_input = "move_right"
 export (String) var move_left_input = "move_left"
+export (String) var jump_input = "jump"
 
 var projectile_container
 
@@ -32,7 +33,7 @@ var stop_on_slope:bool = true
 
 func _ready():
 	state_machine.set_parent(self)
-#	PlayerData.call_deferred("set_max_health", max_health)
+	PlayerData.call_deferred("set_max_health", max_health)
 
 
 func initialize():

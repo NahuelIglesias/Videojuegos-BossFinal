@@ -1,15 +1,18 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://environment/Platform.tscn" type="PackedScene" id=1]
-[ext_resource path="res://entities/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/Player2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Main.gd" type="Script" id=3]
 [ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=4]
-[ext_resource path="res://entities/Player2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/Player1.tscn" type="PackedScene" id=5]
 
 [node name="Main" type="Node"]
 script = ExtResource( 3 )
 
 [node name="Environment" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="Environment"]
+position = Vector2( 513, 301 )
 
 [node name="Platform" parent="Environment" instance=ExtResource( 1 )]
 position = Vector2( 107, 523 )
@@ -50,15 +53,6 @@ position = Vector2( 948, 238 )
 [node name="Platform13" parent="Environment" instance=ExtResource( 1 )]
 position = Vector2( 74, 243 )
 
-[node name="Player" parent="Environment" instance=ExtResource( 2 )]
-position = Vector2( -12, 4 )
-
-[node name="Camera2D" type="Camera2D" parent="Environment/Player"]
-position = Vector2( 525, 297 )
-
-[node name="Player2" parent="Environment" instance=ExtResource( 5 )]
-position = Vector2( 752, 430 )
-
 [node name="Wall" parent="Environment" instance=ExtResource( 4 )]
 position = Vector2( 46, 319 )
 
@@ -70,3 +64,23 @@ position = Vector2( 46, 195 )
 
 [node name="Wall4" parent="Environment" instance=ExtResource( 4 )]
 position = Vector2( 975, 197 )
+
+[node name="Player" parent="Environment" instance=ExtResource( 5 )]
+max_health = null
+ACCELERATION = null
+H_SPEED_LIMIT = null
+jump_speed = null
+FRICTION_WEIGHT = null
+gravity = null
+move_right_input = null
+move_left_input = null
+jump_input = null
+
+[node name="Player2" parent="Environment" instance=ExtResource( 2 )]
+position = Vector2( 473, 14 )
+max_health = null
+ACCELERATION = null
+H_SPEED_LIMIT = null
+jump_speed = null
+FRICTION_WEIGHT = null
+gravity = null
