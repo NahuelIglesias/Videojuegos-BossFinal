@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
+[ext_resource path="res://entities/player/aim-sight/AimSight.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/player/states/IdleState.gd" type="Script" id=2]
 [ext_resource path="res://entities/player/PlayerStateMachine.gd" type="Script" id=3]
 [ext_resource path="res://entities/player/states/WalkState.gd" type="Script" id=4]
@@ -47,3 +48,6 @@ cast_to = Vector2( 0, 3 )
 [node name="FloorRaycast3" type="RayCast2D" parent="FloorRaycasts"]
 position = Vector2( 290, 452.5 )
 cast_to = Vector2( 0, 3 )
+
+[node name="AimSight" parent="." instance=ExtResource( 1 )]
+position = Vector2( 442, 246 )

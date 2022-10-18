@@ -52,16 +52,16 @@ func _handle_deacceleration():
 	velocity.x = lerp(velocity.x, 0, FRICTION_WEIGHT) if abs(velocity.x) > 1 else 0
 
 
-#func _handle_cannon_actions():
-#	var mouse_position_normalized:Vector2 = (get_global_mouse_position() - cannon.global_position).normalized()
-#	cannon.rotation = mouse_position_normalized.angle()
+func _handle_cannon_actions():
+	var mouse_position_normalized:Vector2 = (get_global_mouse_position() - cannon.global_position).normalized()
+	cannon.rotation = mouse_position_normalized.angle()
 
 
-#	if Input.is_action_just_pressed("fire_cannon"):
-#		if projectile_container == null:
-#			projectile_container = get_parent()
-#			cannon.projectile_container = projectile_container
-#		cannon.fire()
+	if Input.is_action_just_pressed("fire_cannon"):
+		if projectile_container == null:
+			projectile_container = get_parent()
+			cannon.projectile_container = projectile_container
+		cannon.fire()
 
 
 func _apply_movement():
