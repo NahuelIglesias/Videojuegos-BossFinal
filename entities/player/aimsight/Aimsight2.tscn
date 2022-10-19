@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/textures/proyectile_turret.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/aims/aimredred.png" type="Texture" id=1]
 [ext_resource path="res://entities/player/aimsight/Aimsight.tscn" type="PackedScene" id=2]
 
 [node name="Aimsight" instance=ExtResource( 2 )]
