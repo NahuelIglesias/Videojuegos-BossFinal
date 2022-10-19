@@ -2,7 +2,6 @@
 
 [ext_resource path="res://enviroment/objects/hurt_zone.gd" type="Script" id=1]
 
-
 [node name="hurt_zone" type="Area2D"]
 script = ExtResource( 1 )
 

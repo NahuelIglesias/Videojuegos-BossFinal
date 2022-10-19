@@ -1,17 +1,11 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://entities/player/Player1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/floor.png" type="Texture" id=2]
 [ext_resource path="res://Main.gd" type="Script" id=3]
-[ext_resource path="res://entities/enemies/Turret.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/textures/background.png" type="Texture" id=5]
-[ext_resource path="res://enviroment/objects/Platform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/textures/lightblue_background_1.png" type="Texture" id=4]
 [ext_resource path="res://enviroment/objects/Ramp.tscn" type="PackedScene" id=7]
-[ext_resource path="res://entities/SpawnManager.gd" type="Script" id=8]
-[ext_resource path="res://enviroment/objects/Obstacle.tscn" type="PackedScene" id=9]
 [ext_resource path="res://enviroment/objects/hurt_zone.tscn" type="PackedScene" id=10]
-[ext_resource path="res://entities/AstarTilemap.tscn" type="PackedScene" id=11]
-[ext_resource path="res://enviroment/objects/MovingPlatform.tscn" type="PackedScene" id=13]
 [ext_resource path="res://entities/player/Player2.tscn" type="PackedScene" id=14]
 [ext_resource path="res://entities/player/aimsight/Aimsight.tscn" type="PackedScene" id=15]
 [ext_resource path="res://entities/player/aimsight/Aimsight2.tscn" type="PackedScene" id=16]
@@ -56,11 +50,8 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 1/shapes = [  ]
 1/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 588.857, 29.8909 )
-
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 274.258, 29.8909 )
+extents = Vector2( 139.5, 32.5 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 3 )
@@ -69,9 +60,9 @@ script = ExtResource( 3 )
 layer = -1
 
 [node name="Background" type="Sprite" parent="CanvasLayer"]
-position = Vector2( -943, 590 )
-scale = Vector2( 1.13875, 0.755649 )
-texture = ExtResource( 5 )
+position = Vector2( 705.5, 382 )
+scale = Vector2( 0.908698, 0.76367 )
+texture = ExtResource( 4 )
 
 [node name="Environment" type="Node2D" parent="."]
 
@@ -81,109 +72,48 @@ cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 8
 cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 32, 0, 0, 33, 0, 0, 34, 0, 0, 35, 0, 0, 36, 0, 0, 37, 0, 0, 38, 0, 0, 39, 0, 0, 40, 0, 0, 41, 0, 0, 42, 0, 0, 43, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65571, 0, 0, 65572, 0, 0, 65573, 0, 0, 65574, 0, 0, 65575, 0, 0, 65576, 0, 0, 65577, 0, 0, 65578, 0, 0, 65579, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131111, 0, 0, 131112, 0, 0, 131113, 0, 0, 131114, 0, 0, 131115, 0, 0, 196608, 0, 0, 196651, 0, 0, 262144, 0, 0, 262187, 0, 0, 327680, 0, 0, 327723, 0, 0, 393216, 0, 0, 393234, 0, 0, 393241, 0, 0, 393259, 0, 0, 458752, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 458775, 0, 0, 458776, 0, 0, 458777, 0, 0, 458795, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524329, 0, 0, 524330, 0, 0, 524331, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589865, 0, 0, 589866, 0, 0, 589867, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655369, 0, 0, 655370, 0, 0, 655393, 0, 0, 655394, 0, 0, 655401, 0, 0, 655402, 0, 0, 655403, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720905, 0, 0, 720930, 0, 0, 720937, 0, 0, 720938, 0, 0, 720939, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786466, 0, 0, 786467, 0, 0, 786468, 0, 0, 786473, 0, 0, 786474, 0, 0, 786475, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 852002, 0, 0, 852003, 0, 0, 852004, 0, 0, 852005, 0, 0, 852006, 0, 0, 852007, 0, 0, 852008, 0, 0, 852009, 0, 0, 852010, 0, 0, 852011, 0, 0, 917504, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917538, 0, 0, 917539, 0, 0, 917540, 0, 0, 917547, 0, 0, 983040, 0, 0, 983049, 0, 0, 983050, 0, 0, 983051, 0, 0, 983052, 0, 0, 983071, 0, 0, 983072, 0, 0, 983073, 0, 0, 983074, 0, 0, 983083, 0, 0, 1048576, 0, 0, 1048619, 0, 0, 1114112, 0, 0, 1114113, 0, 0, 1114154, 0, 0, 1114155, 0, 0, 1179648, 0, 0, 1179649, 0, 0, 1179665, 0, 0, 1179674, 0, 0, 1179690, 0, 0, 1179691, 0, 0, 1245184, 0, 0, 1245185, 0, 0, 1245201, 0, 0, 1245210, 0, 0, 1245226, 0, 0, 1245227, 0, 0, 1310720, 0, 0, 1310721, 0, 0, 1310735, 0, 0, 1310736, 0, 0, 1310737, 0, 0, 1310746, 0, 0, 1310747, 0, 0, 1310748, 0, 0, 1310762, 0, 0, 1310763, 0, 0, 1376256, 0, 0, 1376257, 0, 0, 1376258, 0, 0, 1376259, 0, 0, 1376260, 0, 0, 1376261, 0, 0, 1376271, 0, 0, 1376272, 0, 0, 1376273, 0, 0, 1376282, 0, 0, 1376283, 0, 0, 1376284, 0, 0, 1376294, 0, 0, 1376295, 0, 0, 1376296, 0, 0, 1376297, 0, 0, 1376298, 0, 0, 1376299, 0, 0, 1441792, 0, 0, 1441793, 0, 0, 1441794, 0, 0, 1441795, 0, 0, 1441796, 0, 0, 1441797, 0, 0, 1441798, 0, 0, 1441799, 0, 0, 1441800, 0, 0, 1441801, 0, 0, 1441807, 0, 0, 1441808, 0, 0, 1441809, 0, 0, 1441818, 0, 0, 1441819, 0, 0, 1441820, 0, 0, 1441826, 0, 0, 1441827, 0, 0, 1441828, 0, 0, 1441829, 0, 0, 1441830, 0, 0, 1441831, 0, 0, 1441832, 0, 0, 1441833, 0, 0, 1441834, 0, 0, 1441835, 0, 0, 1507328, 0, 0, 1507329, 0, 0, 1507330, 0, 0, 1507331, 0, 0, 1507332, 0, 0, 1507333, 0, 0, 1507334, 0, 0, 1507335, 0, 0, 1507336, 0, 0, 1507337, 0, 0, 1507338, 0, 0, 1507339, 0, 0, 1507340, 0, 0, 1507341, 0, 0, 1507342, 0, 0, 1507343, 0, 0, 1507344, 0, 0, 1507345, 0, 0, 1507346, 0, 0, 1507347, 0, 0, 1507348, 0, 0, 1507349, 0, 0, 1507350, 0, 0, 1507351, 0, 0, 1507352, 0, 0, 1507353, 0, 0, 1507354, 0, 0, 1507355, 0, 0, 1507356, 0, 0, 1507357, 0, 0, 1507358, 0, 0, 1507359, 0, 0, 1507360, 0, 0, 1507361, 0, 0, 1507362, 0, 0, 1507363, 0, 0, 1507364, 0, 0, 1507365, 0, 0, 1507366, 0, 0, 1507367, 0, 0, 1507368, 0, 0, 1507369, 0, 0, 1507370, 0, 0, 1507371, 0, 0 )
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 32, 0, 0, 33, 0, 0, 34, 0, 0, 35, 0, 0, 36, 0, 0, 37, 0, 0, 38, 0, 0, 39, 0, 0, 40, 0, 0, 41, 0, 0, 42, 0, 0, 43, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65571, 0, 0, 65572, 0, 0, 65573, 0, 0, 65574, 0, 0, 65575, 0, 0, 65576, 0, 0, 65577, 0, 0, 65578, 0, 0, 65579, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131111, 0, 0, 131112, 0, 0, 131113, 0, 0, 131114, 0, 0, 131115, 0, 0, 196608, 0, 0, 196651, 0, 0, 262144, 0, 0, 262187, 0, 0, 327680, 0, 0, 327723, 0, 0, 393216, 0, 0, 393234, 0, 0, 393241, 0, 0, 393259, 0, 0, 458752, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 458775, 0, 0, 458776, 0, 0, 458777, 0, 0, 458795, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524329, 0, 0, 524330, 0, 0, 524331, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589865, 0, 0, 589866, 0, 0, 589867, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655369, 0, 0, 655370, 0, 0, 655393, 0, 0, 655394, 0, 0, 655401, 0, 0, 655402, 0, 0, 655403, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720905, 0, 0, 720930, 0, 0, 720937, 0, 0, 720938, 0, 0, 720939, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786466, 0, 0, 786467, 0, 0, 786468, 0, 0, 786473, 0, 0, 786474, 0, 0, 786475, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 852002, 0, 0, 852003, 0, 0, 852004, 0, 0, 852005, 0, 0, 852006, 0, 0, 852007, 0, 0, 852008, 0, 0, 852009, 0, 0, 852010, 0, 0, 852011, 0, 0, 917504, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917538, 0, 0, 917539, 0, 0, 917540, 0, 0, 917547, 0, 0, 983040, 0, 0, 983049, 0, 0, 983050, 0, 0, 983051, 0, 0, 983052, 0, 0, 983071, 0, 0, 983072, 0, 0, 983073, 0, 0, 983074, 0, 0, 983083, 0, 0, 1048576, 0, 0, 1048619, 0, 0, 1114112, 0, 0, 1114113, 0, 0, 1114154, 0, 0, 1114155, 0, 0, 1179648, 0, 0, 1179649, 0, 0, 1179665, 0, 0, 1179674, 0, 0, 1179690, 0, 0, 1179691, 0, 0, 1245184, 0, 0, 1245185, 0, 0, 1245201, 0, 0, 1245210, 0, 0, 1245226, 0, 0, 1245227, 0, 0, 1310720, 0, 0, 1310721, 0, 0, 1310735, 0, 0, 1310736, 0, 0, 1310737, 0, 0, 1310746, 0, 0, 1310747, 0, 0, 1310748, 0, 0, 1310762, 0, 0, 1310763, 0, 0, 1376256, 0, 0, 1376257, 0, 0, 1376258, 0, 0, 1376259, 0, 0, 1376260, 0, 0, 1376261, 0, 0, 1376271, 0, 0, 1376272, 0, 0, 1376273, 0, 0, 1376282, 0, 0, 1376283, 0, 0, 1376284, 0, 0, 1376294, 0, 0, 1376295, 0, 0, 1376296, 0, 0, 1376297, 0, 0, 1376298, 0, 0, 1376299, 0, 0, 1441792, 0, 0, 1441793, 0, 0, 1441794, 0, 0, 1441795, 0, 0, 1441796, 0, 0, 1441797, 0, 0, 1441798, 0, 0, 1441799, 0, 0, 1441800, 0, 0, 1441801, 0, 0, 1441807, 0, 0, 1441808, 0, 0, 1441809, 0, 0, 1441818, 0, 0, 1441819, 0, 0, 1441820, 0, 0, 1441826, 0, 0, 1441827, 0, 0, 1441828, 0, 0, 1441829, 0, 0, 1441830, 0, 0, 1441831, 0, 0, 1441832, 0, 0, 1441833, 0, 0, 1441834, 0, 0, 1441835, 0, 0, 1507328, 0, 0, 1507329, 0, 0, 1507330, 0, 0, 1507331, 0, 0, 1507332, 0, 0, 1507333, 0, 0, 1507334, 0, 0, 1507335, 0, 0, 1507336, 0, 0, 1507337, 0, 0, 1507338, 0, 0, 1507339, 0, 0, 1507340, 0, 0, 1507341, 0, 0, 1507342, 0, 0, 1507343, 0, 0, 1507344, 0, 0, 1507345, 0, 0, 1507354, 0, 0, 1507355, 0, 0, 1507356, 0, 0, 1507357, 0, 0, 1507358, 0, 0, 1507359, 0, 0, 1507360, 0, 0, 1507361, 0, 0, 1507362, 0, 0, 1507363, 0, 0, 1507364, 0, 0, 1507365, 0, 0, 1507366, 0, 0, 1507367, 0, 0, 1507368, 0, 0, 1507369, 0, 0, 1507370, 0, 0, 1507371, 0, 0 )
 
-[node name="TurretSpawn" type="Node" parent="Environment"]
-script = ExtResource( 8 )
-element_scene = ExtResource( 4 )
-pathfind_scene = ExtResource( 11 )
-pathfind_path = NodePath("AstarTilemap")
+[node name="spikes" parent="Environment" instance=ExtResource( 10 )]
+position = Vector2( 696, 688 )
 
-[node name="Turret" parent="Environment/TurretSpawn" instance=ExtResource( 4 )]
-position = Vector2( 2892.71, 336.693 )
-
-[node name="Turret2" parent="Environment/TurretSpawn" instance=ExtResource( 4 )]
-position = Vector2( 1822.81, 844.184 )
-
-[node name="Turret3" parent="Environment/TurretSpawn" instance=ExtResource( 4 )]
-position = Vector2( 1547.6, 971.339 )
-
-[node name="Turret4" parent="Environment/TurretSpawn" instance=ExtResource( 4 )]
-position = Vector2( 3953.21, 336.405 )
-
-[node name="Turret5" parent="Environment/TurretSpawn" instance=ExtResource( 4 )]
-position = Vector2( 2453.83, 973.277 )
-
-[node name="AstarTilemap" parent="Environment/TurretSpawn" instance=ExtResource( 11 )]
-position = Vector2( 0, -5 )
-
-[node name="Ramp" parent="Environment" instance=ExtResource( 7 )]
-show_behind_parent = true
-position = Vector2( 1925.2, 1054.82 )
-
-[node name="Ramp2" parent="Environment" instance=ExtResource( 7 )]
-show_behind_parent = true
-position = Vector2( 1537, 318.42 )
-rotation = 0.690548
-
-[node name="Ramp3" parent="Environment" instance=ExtResource( 7 )]
-show_behind_parent = true
-position = Vector2( 1879, 403.777 )
-rotation = -0.601429
-
-[node name="Platform" parent="Environment" instance=ExtResource( 6 )]
-position = Vector2( 1993.81, 773.434 )
-
-[node name="Platform2" parent="Environment" instance=ExtResource( 6 )]
-position = Vector2( 1818.59, 893.784 )
-
-[node name="Platform3" parent="Environment" instance=ExtResource( 6 )]
-position = Vector2( 2199.54, 888.108 )
-
-[node name="Platform4" parent="Environment" instance=ExtResource( 6 )]
-show_behind_parent = true
-position = Vector2( 1715.93, 269.936 )
-
-[node name="Platform5" parent="Environment" instance=ExtResource( 6 )]
-show_behind_parent = true
-position = Vector2( 1811.45, 269.882 )
-
-[node name="Obstacle" parent="Environment" instance=ExtResource( 9 )]
-position = Vector2( 2167.82, 850.535 )
-
-[node name="Obstacle2" parent="Environment" instance=ExtResource( 9 )]
-show_behind_parent = true
-position = Vector2( 1752.03, 228.568 )
-
-[node name="Obstacle3" parent="Environment" instance=ExtResource( 9 )]
-show_behind_parent = true
-position = Vector2( 1751.61, 184.841 )
-
-[node name="Obstacle4" parent="Environment" instance=ExtResource( 9 )]
-show_behind_parent = true
-position = Vector2( 1781.88, 228.147 )
-
-[node name="Obstacle5" parent="Environment" instance=ExtResource( 9 )]
-show_behind_parent = true
-position = Vector2( 1782.72, 184 )
-
-[node name="hurt_zone" parent="Environment" instance=ExtResource( 10 )]
-position = Vector2( 5290.39, 1183.8 )
-
-[node name="CollisionShape2D" parent="Environment/hurt_zone" index="0"]
-shape = SubResource( 3 )
-
-[node name="hurt_zone2" parent="Environment" instance=ExtResource( 10 )]
-position = Vector2( 84.5299, 1067.06 )
-rotation = 0.980391
-
-[node name="CollisionShape2D" parent="Environment/hurt_zone2" index="0"]
+[node name="CollisionShape2D" parent="Environment/spikes" index="0"]
+light_mask = 1023
+position = Vector2( 6.5, -2.5 )
 shape = SubResource( 4 )
 
-[node name="MovingPlatform" parent="Environment" instance=ExtResource( 13 )]
-position = Vector2( 4818.62, 1048.21 )
-move_to = Vector2( 700, 0 )
-speed = 150.0
+[node name="Ramp" parent="Environment/spikes" instance=ExtResource( 7 )]
+position = Vector2( 104, 90 )
 
-[node name="MovingPlatform2" parent="Environment" instance=ExtResource( 13 )]
-position = Vector2( 5695.7, 1057.23 )
-move_to = Vector2( 0, -500 )
-speed = 300.0
+[node name="Ramp2" parent="Environment/spikes" instance=ExtResource( 7 )]
+position = Vector2( -152, 93 )
 
-[node name="MovingPlatform3" parent="Environment" instance=ExtResource( 13 )]
-position = Vector2( 5554.28, 432.527 )
-move_to = Vector2( -1450, 0 )
-speed = 300.0
+[node name="Ramp3" parent="Environment/spikes" instance=ExtResource( 7 )]
+position = Vector2( -127, 113 )
+
+[node name="Ramp4" parent="Environment/spikes" instance=ExtResource( 7 )]
+position = Vector2( 83, 118 )
+
+[node name="Ramp5" parent="Environment/spikes" instance=ExtResource( 7 )]
+position = Vector2( 58, 119 )
+
+[node name="Ramp6" parent="Environment/spikes" instance=ExtResource( 7 )]
+position = Vector2( 30, 120 )
+
+[node name="Ramp7" parent="Environment/spikes" instance=ExtResource( 7 )]
+position = Vector2( 2, 119 )
+
+[node name="Ramp8" parent="Environment/spikes" instance=ExtResource( 7 )]
+position = Vector2( -23, 120 )
+
+[node name="Ramp9" parent="Environment/spikes" instance=ExtResource( 7 )]
+position = Vector2( -49, 120 )
+
+[node name="Ramp10" parent="Environment/spikes" instance=ExtResource( 7 )]
+position = Vector2( -74, 120 )
+
+[node name="Ramp11" parent="Environment/spikes" instance=ExtResource( 7 )]
+position = Vector2( -102, 120 )
 
 [node name="Camera" type="Camera2D" parent="Environment"]
 position = Vector2( 704, 388 )
@@ -194,7 +124,6 @@ position = Vector2( 323, 557 )
 
 [node name="Player2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 1157, 571 )
-jump_speed = 800
 
 [node name="Aimsights" type="Node" parent="."]
 
@@ -204,5 +133,4 @@ position = Vector2( 403, 553 )
 [node name="Aimsight2" parent="Aimsights" instance=ExtResource( 16 )]
 position = Vector2( 1047, 573 )
 
-[editable path="Environment/hurt_zone"]
-[editable path="Environment/hurt_zone2"]
+[editable path="Environment/spikes"]
