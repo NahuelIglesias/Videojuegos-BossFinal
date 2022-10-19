@@ -10,4 +10,5 @@ aim_down_input = "aim_down_2"
 aim_up_input = "aim_up_2"
 
 [node name="Sprite" parent="." index="0"]
+position = Vector2( 9.09495e-13, 9.53674e-07 )
 texture = ExtResource( 1 )
