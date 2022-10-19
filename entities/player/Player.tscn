@@ -13,7 +13,7 @@
 [ext_resource path="res://entities/player/states/DashState.gd" type="Script" id=11]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 31.6034
+radius = 18.0
 height = 24.6237
 
 [node name="Player" type="KinematicBody2D"]
@@ -43,7 +43,8 @@ dash_time = 0.4
 speed_multiplier = 4.0
 
 [node name="Body" type="Sprite" parent="."]
-scale = Vector2( 1, 1.35954 )
+position = Vector2( 4.17233e-07, 6.55651e-07 )
+scale = Vector2( 0.59375, 0.96875 )
 texture = ExtResource( 7 )
 
 [node name="Cannon" type="Sprite" parent="."]
@@ -58,7 +59,7 @@ position = Vector2( 15, 0 )
 shape = SubResource( 1 )
 
 [node name="FloorRaycasts" type="Node2D" parent="."]
-position = Vector2( 0, 45 )
+position = Vector2( 0, 32 )
 
 [node name="FloorRaycast1" type="RayCast2D" parent="FloorRaycasts"]
 cast_to = Vector2( 0, 5 )

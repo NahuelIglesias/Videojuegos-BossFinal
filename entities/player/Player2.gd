@@ -16,7 +16,7 @@ const SLOPE_THRESHOLD := deg2rad(60)
 export (int) var max_health = 3
 export (float) var ACCELERATION:float = 30.0
 export (float) var H_SPEED_LIMIT:float = 400.0
-export (int) var jump_speed = 1000
+export (int) var jump_speed = 800
 export (float) var FRICTION_WEIGHT:float = 0.1
 export (int) var gravity = 30
 
