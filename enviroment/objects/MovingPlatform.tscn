@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://enviroment/objects/MovingPlatform.gd" type="Script" id=1]
+[ext_resource path="res://assets/textures/brown_square.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 63.5323, 19.3518 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 65.8103, 10.6044 )
+
+[node name="MovingPlatform" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Platform" type="KinematicBody2D" parent="."]
+motion/sync_to_physics = true
+
+[node name="Sprite" type="Sprite" parent="Platform"]
+position = Vector2( 0.42455, 0.0449598 )
+scale = Vector2( 0.560501, 0.175936 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+shape = SubResource( 1 )
+
+[node name="PlayerDetectionArea" type="Area2D" parent="Platform"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform/PlayerDetectionArea"]
+position = Vector2( 0, -22 )
+shape = SubResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
+repeat = true
+playback/repeat = true
+
+[connection signal="body_entered" from="Platform/PlayerDetectionArea" to="." method="_on_PlayerDetectionArea_body_entered"]
+[connection signal="body_exited" from="Platform/PlayerDetectionArea" to="." method="_on_PlayerDetectionArea_body_exited"]

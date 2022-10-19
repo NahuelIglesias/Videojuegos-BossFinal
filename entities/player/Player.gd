@@ -4,8 +4,7 @@ class_name Player
 signal hit()
 signal dead()
 
-#onready var cannon = $Cannon
-onready var aim_sight = $AimSight
+onready var cannon = $Cannon
 onready var state_machine = $StateMachine
 onready var floor_raycasts:Array = $FloorRaycasts.get_children()
 
@@ -14,21 +13,14 @@ const SNAP_DIRECTION := Vector2.DOWN
 const SNAP_LENGTH := 32.0
 const SLOPE_THRESHOLD := deg2rad(60)
 
-export (int) var max_health = 3
+export (int) var max_health = 20
 export (float) var ACCELERATION:float = 30.0
 export (float) var H_SPEED_LIMIT:float = 400.0
-export (int) var jump_speed = 750
+export (int) var jump_speed = 1000
 export (float) var FRICTION_WEIGHT:float = 0.1
 export (int) var gravity = 30
-export (String) var move_right_input = "move_right"
-export (String) var move_left_input = "move_left"
-export (String) var jump_input = "jump"
-export (String) var fire_projectile_input = "fire_projectile" 
-
-export (PackedScene) var projectile_scene:PackedScene
 
 var projectile_container
-var proj_instance
 
 var velocity:Vector2 = Vector2.ZERO
 var snap_vector:Vector2 = SNAP_DIRECTION * SNAP_LENGTH
@@ -42,13 +34,12 @@ func _ready():
 
 
 func initialize(projectile_container):
-	pass
 	self.projectile_container = projectile_container
-#	cannon.projectile_container = projectile_container
+	cannon.projectile_container = projectile_container
 
 
 func _handle_move_input():
-	move_direction = int(Input.is_action_pressed(move_right_input)) - int(Input.is_action_pressed(move_left_input))
+	move_direction = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
 	if move_direction != 0:
 		velocity.x = clamp(velocity.x + (move_direction * ACCELERATION), -H_SPEED_LIMIT, H_SPEED_LIMIT)
 
@@ -58,22 +49,16 @@ func _handle_deacceleration():
 
 
 func _handle_cannon_actions():
-	var aim_sight_position:Vector2 = (aim_sight.position - position).normalized()
-	#cannon.rotation = aim_sight_position.angle()
+	var mouse_position_normalized:Vector2 = (get_global_mouse_position() - cannon.global_position).normalized()
+	cannon.rotation = mouse_position_normalized.angle()
 
-	if Input.is_action_just_pressed(fire_projectile_input):
+
+	if Input.is_action_just_pressed("fire_projectile"):
 		if projectile_container == null:
 			projectile_container = get_parent()
-			#cannon.projectile_container = projectile_container
-		fire()
+			cannon.projectile_container = projectile_container
+		cannon.fire()
 
-
-func fire():
-	proj_instance = projectile_scene.instance()
-	proj_instance.initialize(projectile_container, global_position, global_position.direction_to(aim_sight.global_position))
-
-func add_collision_exception_to_projectile(object):
-	proj_instance.add_collision_exception_to_projectile(object)
 
 func _apply_movement():
 	velocity.y += gravity
@@ -97,4 +82,5 @@ func is_on_floor()->bool:
 		raycast.force_raycast_update()
 		is_colliding = is_colliding || raycast.is_colliding()
 	return is_colliding
+
 
