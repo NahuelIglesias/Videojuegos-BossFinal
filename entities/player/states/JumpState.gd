@@ -1,6 +1,6 @@
 extends "res://entities/AbstractState.gd"
 
-export (int) var jumps_limit:int = 1
+export (int) var jumps_limit:int = 0
 
 var jumps:int = 0
 
