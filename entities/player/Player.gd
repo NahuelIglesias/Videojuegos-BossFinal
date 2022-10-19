@@ -20,6 +20,11 @@ export (int) var jump_speed = 1000
 export (float) var FRICTION_WEIGHT:float = 0.1
 export (int) var gravity = 30
 
+export (String) var move_right_input = "move_right"
+export (String) var move_left_input = "move_left"
+export (String) var jump_input = "jump"
+export (String) var fire_projectile_input = "fire_projectile" 
+
 var projectile_container
 
 var velocity:Vector2 = Vector2.ZERO
@@ -39,7 +44,7 @@ func initialize(projectile_container):
 
 
 func _handle_move_input():
-	move_direction = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
+	move_direction = int(Input.is_action_pressed(move_right_input)) - int(Input.is_action_pressed(move_left_input))
 	if move_direction != 0:
 		velocity.x = clamp(velocity.x + (move_direction * ACCELERATION), -H_SPEED_LIMIT, H_SPEED_LIMIT)
 
@@ -53,7 +58,7 @@ func _handle_cannon_actions():
 	cannon.rotation = mouse_position_normalized.angle()
 
 
-	if Input.is_action_just_pressed("fire_projectile"):
+	if Input.is_action_just_pressed(fire_projectile_input):
 		if projectile_container == null:
 			projectile_container = get_parent()
 			cannon.projectile_container = projectile_container

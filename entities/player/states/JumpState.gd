@@ -17,7 +17,7 @@ func exit():
 func handle_input(event:InputEvent):
 	if event.is_action_pressed("dash") && parent.move_direction != 0:
 		emit_signal("finished", "dash")
-	elif event.is_action_pressed("jump") && jumps < jumps_limit:
+	elif event.is_action_pressed(parent.jump_input) && jumps < jumps_limit:
 		jumps += 1
 		parent.velocity.y = -parent.jump_speed
 
