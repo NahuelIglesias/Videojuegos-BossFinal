@@ -1,7 +1,7 @@
 extends "res://entities/AbstractState.gd"
 
-export (float) var dash_time:float = 0.0
-export (float) var speed_multiplier:float = 0.1
+export (float) var dash_time:float = 0.1
+export (float) var speed_multiplier:float = 0.5
 
 var dash_timer:Timer
 

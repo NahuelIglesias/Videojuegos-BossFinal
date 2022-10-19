@@ -27,6 +27,7 @@ export (String) var fire_projectile_input = "fire_projectile"
 export (String) var dash_input = "dash"
 
 var projectile_container
+var aimsight
 
 var velocity:Vector2 = Vector2.ZERO
 var snap_vector:Vector2 = SNAP_DIRECTION * SNAP_LENGTH
@@ -39,9 +40,10 @@ func _ready():
 	PlayerData.call_deferred("set_max_health", max_health)
 
 
-func initialize(projectile_container):
+func initialize(projectile_container, aimsight):
 	self.projectile_container = projectile_container
 	cannon.projectile_container = projectile_container
+	self.aimsight = aimsight
 
 
 func _handle_move_input():
@@ -55,8 +57,8 @@ func _handle_deacceleration():
 
 
 func _handle_cannon_actions():
-	var mouse_position_normalized:Vector2 = (get_global_mouse_position() - cannon.global_position).normalized()
-	cannon.rotation = mouse_position_normalized.angle()
+	var aimsight_position_normalized:Vector2 = (aimsight.global_position - cannon.global_position).normalized()
+	cannon.rotation = aimsight_position_normalized.angle()
 
 
 	if Input.is_action_just_pressed(fire_projectile_input):
