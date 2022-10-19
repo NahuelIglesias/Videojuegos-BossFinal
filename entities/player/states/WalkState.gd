@@ -2,9 +2,9 @@ extends "res://entities/AbstractState.gd"
 
 
 func handle_input(event:InputEvent):
-	if event.is_action_pressed("jump") && parent.is_on_floor():
+	if event.is_action_pressed(parent.jump_input) && parent.is_on_floor():
 		emit_signal("finished", "jump")
-	elif event.is_action_pressed("dash"):
+	elif event.is_action_pressed(parent.dash_input):
 		emit_signal("finished", "dash")
 
 func update(delta):

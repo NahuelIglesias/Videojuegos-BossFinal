@@ -11,6 +11,7 @@ move_right_input = "move_right_2"
 move_left_input = "move_left_2"
 jump_input = "jump_2"
 fire_projectile_input = "fire_projectile_2"
+dash_input = "dash_2"
 
 [node name="Body" parent="." index="1"]
 texture = ExtResource( 2 )

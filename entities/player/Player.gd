@@ -13,7 +13,7 @@ const SNAP_DIRECTION := Vector2.DOWN
 const SNAP_LENGTH := 32.0
 const SLOPE_THRESHOLD := deg2rad(60)
 
-export (int) var max_health = 20
+export (int) var max_health = 3
 export (float) var ACCELERATION:float = 30.0
 export (float) var H_SPEED_LIMIT:float = 400.0
 export (int) var jump_speed = 1000
@@ -23,7 +23,8 @@ export (int) var gravity = 30
 export (String) var move_right_input = "move_right"
 export (String) var move_left_input = "move_left"
 export (String) var jump_input = "jump"
-export (String) var fire_projectile_input = "fire_projectile" 
+export (String) var fire_projectile_input = "fire_projectile"
+export (String) var dash_input = "dash"
 
 var projectile_container
 
