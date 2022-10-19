@@ -56,8 +56,8 @@ script = ExtResource( 3 )
 layer = -1
 
 [node name="Background" type="Sprite" parent="CanvasLayer"]
-position = Vector2( 511.866, 301.46 )
-scale = Vector2( 1.28716, 1.01413 )
+position = Vector2( 458.501, 227.305 )
+scale = Vector2( 1.13875, 0.755649 )
 texture = ExtResource( 5 )
 
 [node name="Environment" type="Node2D" parent="."]
@@ -174,7 +174,7 @@ speed = 300.0
 position = Vector2( 180.489, 268.887 )
 
 [node name="Camera" type="Camera2D" parent="Environment"]
-position = Vector2( 690.02, 944.322 )
+position = Vector2( 685, 388 )
 current = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]

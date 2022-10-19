@@ -48,6 +48,11 @@ PlayerData="*res://globals/PlayerData.gd"
 GameState="*res://globals/GameState.gd"
 Player2Data="*res://globals/Player2Data.gd"
 
+[display]
+
+window/size/width=1366
+window/size/height=768
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
