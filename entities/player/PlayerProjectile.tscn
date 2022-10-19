@@ -11,6 +11,9 @@ position = Vector2( -0.0782127, -0.00446609 )
 rotation = -1.58133
 scale = Vector2( 0.402377, 0.402377 )
 
+[node name="LifetimeTimer" parent="." index="0"]
+wait_time = 10.0
+
 [node name="Sprite" parent="." index="1"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
