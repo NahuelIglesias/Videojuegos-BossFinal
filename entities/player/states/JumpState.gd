@@ -6,7 +6,7 @@ func enter():
 	parent.snap_vector = Vector2.ZERO
 
 func update(delta:float):
-#	parent._handle_cannon_actions()
+	parent._handle_cannon_actions()
 	parent._handle_move_input()
 	if parent.move_direction == 0:
 		parent._handle_deacceleration()

@@ -5,7 +5,7 @@ func handle_input(event:InputEvent):
 		emit_signal("finished", "jump")
 
 func update(delta):
-#	parent._handle_cannon_actions()
+	parent._handle_cannon_actions()
 	parent._handle_move_input()
 	parent._apply_movement()
 	if parent.move_direction == 0:

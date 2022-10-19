@@ -5,6 +5,7 @@ signal hit()
 signal dead()
 
 #onready var cannon = $Cannon
+onready var aim_sight = $AimSight
 onready var state_machine = $StateMachine
 onready var floor_raycasts:Array = $FloorRaycasts.get_children()
 
@@ -22,8 +23,12 @@ export (int) var gravity = 30
 export (String) var move_right_input = "move_right"
 export (String) var move_left_input = "move_left"
 export (String) var jump_input = "jump"
+export (String) var fire_projectile_input = "fire_projectile" 
+
+export (PackedScene) var projectile_scene:PackedScene
 
 var projectile_container
+var proj_instance
 
 var velocity:Vector2 = Vector2.ZERO
 var snap_vector:Vector2 = SNAP_DIRECTION * SNAP_LENGTH
@@ -36,9 +41,9 @@ func _ready():
 	PlayerData.call_deferred("set_max_health", max_health)
 
 
-func initialize():
+func initialize(projectile_container):
 	pass
-#	self.projectile_container = projectile_container
+	self.projectile_container = projectile_container
 #	cannon.projectile_container = projectile_container
 
 
@@ -53,16 +58,22 @@ func _handle_deacceleration():
 
 
 func _handle_cannon_actions():
-	var mouse_position_normalized:Vector2 = (get_global_mouse_position() - cannon.global_position).normalized()
-	cannon.rotation = mouse_position_normalized.angle()
+	var aim_sight_position:Vector2 = (aim_sight.position - position).normalized()
+	#cannon.rotation = aim_sight_position.angle()
 
-
-	if Input.is_action_just_pressed("fire_cannon"):
+	if Input.is_action_just_pressed(fire_projectile_input):
 		if projectile_container == null:
 			projectile_container = get_parent()
-			cannon.projectile_container = projectile_container
-		cannon.fire()
+			#cannon.projectile_container = projectile_container
+		fire()
 
+
+func fire():
+	proj_instance = projectile_scene.instance()
+	proj_instance.initialize(projectile_container, global_position, global_position.direction_to(aim_sight.global_position))
+
+func add_collision_exception_to_projectile(object):
+	proj_instance.add_collision_exception_to_projectile(object)
 
 func _apply_movement():
 	velocity.y += gravity

@@ -9,6 +9,9 @@ move_left_input = "move_left_2"
 jump_input = "jump_2"
 
 [node name="Body" type="Sprite" parent="." index="0"]
-position = Vector2( 281, 421.5 )
+position = Vector2( -9.53674e-07, 0 )
 scale = Vector2( 0.606061, 0.924242 )
 texture = ExtResource( 1 )
+
+[node name="AimSight" parent="." index="4"]
+position = Vector2( -59, 0 )

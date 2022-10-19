@@ -17,7 +17,6 @@ collision_mask = 3
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 281, 421.5 )
 shape = SubResource( 1 )
 
 [node name="StateMachine" type="Node" parent="."]
@@ -38,16 +37,16 @@ script = ExtResource( 6 )
 [node name="FloorRaycasts" type="Node2D" parent="."]
 
 [node name="FloorRaycast1" type="RayCast2D" parent="FloorRaycasts"]
-position = Vector2( 281, 452.5 )
+position = Vector2( 0, 31 )
 cast_to = Vector2( 0, 3 )
 
 [node name="FloorRaycast2" type="RayCast2D" parent="FloorRaycasts"]
-position = Vector2( 272, 452.5 )
+position = Vector2( -9, 31 )
 cast_to = Vector2( 0, 3 )
 
 [node name="FloorRaycast3" type="RayCast2D" parent="FloorRaycasts"]
-position = Vector2( 290, 452.5 )
+position = Vector2( 9, 31 )
 cast_to = Vector2( 0, 3 )
 
 [node name="AimSight" parent="." instance=ExtResource( 1 )]
-position = Vector2( 442, 246 )
+position = Vector2( 61, 0 )
