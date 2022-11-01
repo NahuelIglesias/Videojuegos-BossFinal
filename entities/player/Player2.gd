@@ -97,4 +97,11 @@ func is_on_floor()->bool:
 		is_colliding = is_colliding || raycast.is_colliding()
 	return is_colliding
 
-
+func _on_VisibilityNotifier2D_screen_exited():
+	if (position.y >= 768):
+		position.y = 0
+		
+	if (position.x <= 0):
+		position.x = 1366
+	elif (position.x > 1366):
+		position.x = 0
