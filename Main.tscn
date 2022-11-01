@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=2]
+[gd_scene load_steps=118 format=2]
 
 [ext_resource path="res://entities/player/Player1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/floor.png" type="Texture" id=2]
@@ -12,9 +12,11 @@
 [ext_resource path="res://enviroment/objects/hurt_zone.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/tilesets/2.png" type="Texture" id=11]
 [ext_resource path="res://assets/tilesets/4.png" type="Texture" id=12]
+[ext_resource path="res://GUI/GUI_layer.gd" type="Script" id=13]
 [ext_resource path="res://entities/player/Player2.tscn" type="PackedScene" id=14]
 [ext_resource path="res://entities/player/aimsight/Aimsight.tscn" type="PackedScene" id=15]
 [ext_resource path="res://entities/player/aimsight/Aimsight2.tscn" type="PackedScene" id=16]
+[ext_resource path="res://GUI/HearthTexture.tscn" type="PackedScene" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -2377,7 +2379,7 @@ position = Vector2( 6.5, -2.5 )
 shape = SubResource( 4 )
 
 [node name="Ramp" parent="Environment/spikes" instance=ExtResource( 7 )]
-position = Vector2( 104, 90 )
+position = Vector2( 99, 122 )
 
 [node name="Ramp2" parent="Environment/spikes" instance=ExtResource( 7 )]
 visible = false
@@ -2416,9 +2418,11 @@ current = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 323, 557 )
+max_health = 5
 
 [node name="Player2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 1157, 571 )
+max_health = 5
 
 [node name="Aimsights" type="Node" parent="."]
 
@@ -2427,5 +2431,52 @@ position = Vector2( 403, 553 )
 
 [node name="Aimsight2" parent="Aimsights" instance=ExtResource( 16 )]
 position = Vector2( 1047, 573 )
+
+[node name="GUI" type="CanvasLayer" parent="."]
+script = ExtResource( 13 )
+hearth_scene = ExtResource( 17 )
+
+[node name="HearthsContainer" type="GridContainer" parent="GUI"]
+margin_left = 168.0
+margin_top = 68.0
+margin_right = 208.0
+margin_bottom = 108.0
+columns = 10
+
+[node name="HearthsContainer2" type="GridContainer" parent="GUI"]
+margin_left = 924.0
+margin_top = 67.0
+margin_right = 964.0
+margin_bottom = 107.0
+columns = 10
+
+[node name="Fade" type="Node" parent="GUI"]
+
+[node name="ScreenCover" type="ColorRect" parent="GUI/Fade"]
+margin_right = 1398.0
+margin_bottom = 804.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Tween" type="Tween" parent="GUI/Fade"]
+
+[node name="WinLabel" type="Label" parent="GUI"]
+margin_left = 557.0
+margin_top = 247.0
+margin_right = 802.0
+margin_bottom = 301.0
+rect_pivot_offset = Vector2( -851, 292 )
+text = "Felicitaciones JUGADOR 1, GANASTE!"
+align = 1
+valign = 1
+
+[node name="WinLabel2" type="Label" parent="GUI"]
+margin_left = 561.0
+margin_top = 263.0
+margin_right = 797.0
+margin_bottom = 284.0
+rect_pivot_offset = Vector2( -851, 292 )
+text = "Felicitaciones JUGADOR 2, GANASTE!"
+align = 1
+valign = 1
 
 [editable path="Environment/spikes"]

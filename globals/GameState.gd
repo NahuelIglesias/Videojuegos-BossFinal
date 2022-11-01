@@ -1,6 +1,10 @@
 extends Node
 
-signal level_won()
+signal player1_won()
+signal player2_won()
 
-func notify_level_won():
-	emit_signal("level_won")
+func notify_player1_won():
+	emit_signal("player1_won")
+
+func notify_player2_won():
+	emit_signal("player2_won")
