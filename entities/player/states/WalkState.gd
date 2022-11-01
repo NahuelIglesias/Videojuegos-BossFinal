@@ -8,8 +8,10 @@ func handle_input(event:InputEvent):
 		emit_signal("finished", "dash")
 
 func update(delta):
+	parent.animated_sprite.play("walk")
 	parent._handle_cannon_actions()
 	parent._handle_move_input()
 	parent._apply_movement()
 	if parent.move_direction == 0:
+		parent.animated_sprite.stop()
 		emit_signal("finished", "idle")

@@ -9,6 +9,7 @@ func handle_input(event:InputEvent):
 
 
 func update(delta:float):
+	parent.animated_sprite.play("idle")
 	parent._handle_cannon_actions()
 	parent._handle_deacceleration()
 	parent._apply_movement()

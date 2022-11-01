@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://entities/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://entities/player/states/WalkState.gd" type="Script" id=2]
@@ -6,8 +6,6 @@
 [ext_resource path="res://entities/player/Cannon.gd" type="Script" id=4]
 [ext_resource path="res://entities/player/PlayerProjectile.tscn" type="PackedScene" id=5]
 [ext_resource path="res://entities/player/states/IdleState.gd" type="Script" id=6]
-[ext_resource path="res://assets/textures/player.png" type="Texture" id=7]
-[ext_resource path="res://assets/textures/cannon.png" type="Texture" id=8]
 [ext_resource path="res://entities/player/states/DeadState.gd" type="Script" id=9]
 [ext_resource path="res://entities/player/states/JumpState.gd" type="Script" id=10]
 [ext_resource path="res://entities/player/states/DashState.gd" type="Script" id=11]
@@ -42,13 +40,10 @@ script = ExtResource( 11 )
 dash_time = 0.4
 speed_multiplier = 4.0
 
-[node name="Body" type="Sprite" parent="."]
-position = Vector2( 4.17233e-07, 6.55651e-07 )
-scale = Vector2( 0.59375, 0.96875 )
-texture = ExtResource( 7 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+animation = "jump"
 
 [node name="Cannon" type="Sprite" parent="."]
-texture = ExtResource( 8 )
 script = ExtResource( 4 )
 projectile_scene = ExtResource( 5 )
 

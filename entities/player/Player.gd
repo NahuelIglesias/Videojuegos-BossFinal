@@ -7,6 +7,7 @@ signal dead()
 onready var cannon = $Cannon
 onready var state_machine = $StateMachine
 onready var floor_raycasts:Array = $FloorRaycasts.get_children()
+onready var animated_sprite = $AnimatedSprite
 
 const FLOOR_NORMAL := Vector2.UP
 const SNAP_DIRECTION := Vector2.DOWN
@@ -50,6 +51,11 @@ func _handle_move_input():
 	move_direction = int(Input.is_action_pressed(move_right_input)) - int(Input.is_action_pressed(move_left_input))
 	if move_direction != 0:
 		velocity.x = clamp(velocity.x + (move_direction * ACCELERATION), -H_SPEED_LIMIT, H_SPEED_LIMIT)
+		
+	if move_direction < 0:
+		animated_sprite.flip_h = true
+	elif move_direction > 0:
+		animated_sprite.flip_h = false
 
 
 func _handle_deacceleration():
