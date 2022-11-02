@@ -12,7 +12,7 @@ func _ready():
 	player2.initialize(self, aimsight2)
 
 func _unhandled_input(event):
-	if event.is_action("restart"):
+	if event.is_action("restart") && (PlayerData.current_health <= 0 || Player2Data.current_health <= 0):
 		_restart_level()
 
 func _restart_level():

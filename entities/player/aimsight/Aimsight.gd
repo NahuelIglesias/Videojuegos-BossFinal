@@ -1,6 +1,6 @@
 extends Node2D
 
-export (int) var speed = 7
+export (int) var speed = 10
 
 export (String) var aim_right_input = "aim_right"
 export (String) var aim_left_input = "aim_left"
