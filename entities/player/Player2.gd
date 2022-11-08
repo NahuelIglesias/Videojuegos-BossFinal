@@ -38,7 +38,6 @@ var stop_on_slope:bool = true
 
 func _ready():
 	state_machine.set_parent(self)
-	aimsight.set_parent_player(self)
 	Player2Data.call_deferred("set_max_health", max_health)
 
 
