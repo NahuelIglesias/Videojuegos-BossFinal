@@ -8,6 +8,7 @@ onready var cannon = $Cannon
 onready var state_machine = $StateMachine
 onready var floor_raycasts:Array = $FloorRaycasts.get_children()
 onready var animated_sprite = $AnimatedSprite
+onready var aimsight = $Aimsight2
 
 const FLOOR_NORMAL := Vector2.UP
 const SNAP_DIRECTION := Vector2.DOWN
@@ -28,7 +29,6 @@ export (String) var fire_projectile_input = "fire_projectile"
 export (String) var dash_input = "dash"
 
 var projectile_container
-var aimsight
 
 var velocity:Vector2 = Vector2.ZERO
 var snap_vector:Vector2 = SNAP_DIRECTION * SNAP_LENGTH
@@ -38,13 +38,13 @@ var stop_on_slope:bool = true
 
 func _ready():
 	state_machine.set_parent(self)
+	aimsight.set_parent_player(self)
 	Player2Data.call_deferred("set_max_health", max_health)
 
 
-func initialize(projectile_container, aimsight):
+func initialize(projectile_container):
 	self.projectile_container = projectile_container
 	cannon.projectile_container = projectile_container
-	self.aimsight = aimsight
 
 
 func _handle_move_input():

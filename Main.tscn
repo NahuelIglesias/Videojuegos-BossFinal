@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=2]
+[gd_scene load_steps=117 format=2]
 
 [ext_resource path="res://entities/player/Player1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/floor.png" type="Texture" id=2]
@@ -14,8 +14,6 @@
 [ext_resource path="res://assets/tilesets/4.png" type="Texture" id=12]
 [ext_resource path="res://GUI/GUI_layer.gd" type="Script" id=13]
 [ext_resource path="res://entities/player/Player2.tscn" type="PackedScene" id=14]
-[ext_resource path="res://entities/player/aimsight/Aimsight.tscn" type="PackedScene" id=15]
-[ext_resource path="res://entities/player/aimsight/Aimsight2.tscn" type="PackedScene" id=16]
 [ext_resource path="res://GUI/HearthTexture.tscn" type="PackedScene" id=17]
 [ext_resource path="res://enviroment/objects/IceSpikes.tscn" type="PackedScene" id=18]
 [ext_resource path="res://assets/wintertileset/png/Tiles/16.png" type="Texture" id=19]
@@ -2256,14 +2254,6 @@ max_health = 5
 [node name="Player2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 1296, 631 )
 max_health = 5
-
-[node name="Aimsights" type="Node" parent="."]
-
-[node name="Aimsight" parent="Aimsights" instance=ExtResource( 15 )]
-position = Vector2( 150, 621 )
-
-[node name="Aimsight2" parent="Aimsights" instance=ExtResource( 16 )]
-position = Vector2( 1186, 633 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 script = ExtResource( 13 )
