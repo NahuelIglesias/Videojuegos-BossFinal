@@ -8,14 +8,24 @@ export (String) var aim_down_input = "aim_down"
 export (String) var aim_up_input = "aim_up"
 
 func get_input():
-	if Input.is_action_pressed(aim_right_input) && !global_position.x > 1358 && !position.x > 70:
-		position.x += speed
-	if Input.is_action_pressed(aim_left_input) && !global_position.x <= 8 && !position.x <= -70:
-		position.x -= speed
-	if Input.is_action_pressed(aim_down_input) && !global_position.y >= 760 && !position.y >= 70:
-		position.y += speed
-	if Input.is_action_pressed(aim_up_input) && !global_position.y <= 8 && !position.y <= -70:
-		position.y -= speed
+	
+	if Input.is_action_pressed(aim_right_input):
+		position = Vector2(40,0)
+	if Input.is_action_pressed(aim_left_input):
+		position = Vector2(-40,0)
+	if Input.is_action_pressed(aim_down_input):
+		position = Vector2(0,40)
+	if Input.is_action_pressed(aim_up_input):
+		position = Vector2(0,-40)
+		
+	if Input.is_action_pressed(aim_right_input) && Input.is_action_pressed(aim_up_input):
+		position = Vector2(40,-40)
+	if Input.is_action_pressed(aim_right_input) && Input.is_action_pressed(aim_down_input):
+		position = Vector2(40,40)
+	if Input.is_action_pressed(aim_left_input) && Input.is_action_pressed(aim_up_input):
+		position = Vector2(-40,-40)
+	if Input.is_action_pressed(aim_left_input) && Input.is_action_pressed(aim_down_input):
+		position = Vector2(-40,40)			
 
 func _physics_process(delta):
 	get_input()

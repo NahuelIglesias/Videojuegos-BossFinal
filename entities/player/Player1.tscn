@@ -36,5 +36,12 @@ scale = Vector2( 1.93652, 1.9541 )
 frames = SubResource( 1 )
 animation = "walk"
 
+[node name="Cannon" parent="." index="2"]
+position = Vector2( 9.53674e-07, 0 )
+scale = Vector2( 0.735294, 0.611111 )
+
+[node name="CannonTip" parent="Cannon" index="0"]
+position = Vector2( 40, 0 )
+
 [node name="Aimsight" parent="." index="6" instance=ExtResource( 5 )]
-position = Vector2( 50, 0 )
+position = Vector2( 40, 0 )

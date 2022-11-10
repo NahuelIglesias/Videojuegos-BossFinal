@@ -51,9 +51,11 @@ frames = SubResource( 1 )
 animation = "default"
 
 [node name="Cannon" parent="." index="2"]
-position = Vector2( 0, -0.25 )
 scale = Vector2( 1, 0.207692 )
 projectile_scene = ExtResource( 4 )
 
+[node name="CannonTip" parent="Cannon" index="0"]
+position = Vector2( -40, 0 )
+
 [node name="Aimsight2" parent="." index="6" instance=ExtResource( 12 )]
-position = Vector2( -51, 0 )
+position = Vector2( -40, 0 )
