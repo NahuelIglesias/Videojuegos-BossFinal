@@ -2,6 +2,7 @@ extends Node2D
 
 onready var lifetime_timer = $LifetimeTimer
 onready var hitbox = $Hitbox
+onready var animated_sprite = $AnimatedSprite
 
 export (float) var VELOCITY:float = 800.0
 export (int) var damage = 1
@@ -29,6 +30,7 @@ func _remove():
 		queue_free()
 
 func _on_Hitbox_body_entered(body):
+	animated_sprite.play("hit")
 	if body.has_method("notify_hit"):
 		body.notify_hit(-damage)
 	hitbox.collision_layer = 0
@@ -36,3 +38,5 @@ func _on_Hitbox_body_entered(body):
 	lifetime_timer.stop()
 	call_deferred("_remove")
 
+func _ready():
+	animated_sprite.play("idle")

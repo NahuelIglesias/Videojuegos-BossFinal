@@ -41,7 +41,6 @@ dash_time = 0.4
 speed_multiplier = 4.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-animation = "jump"
 
 [node name="Cannon" type="Sprite" parent="."]
 script = ExtResource( 4 )

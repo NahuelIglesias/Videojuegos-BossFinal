@@ -8,6 +8,7 @@ onready var cannon = $Cannon
 onready var state_machine = $StateMachine
 onready var floor_raycasts:Array = $FloorRaycasts.get_children()
 onready var animated_sprite = $AnimatedSprite
+onready var animated_sprite_hit = $AnimatedSpriteHit
 onready var aimsight = $Aimsight2
 
 const FLOOR_NORMAL := Vector2.UP
@@ -39,6 +40,7 @@ var stop_on_slope:bool = true
 func _ready():
 	state_machine.set_parent(self)
 	Player2Data.call_deferred("set_max_health", max_health)
+	animated_sprite_hit.play("idle")
 
 
 func initialize(projectile_container):
@@ -82,6 +84,7 @@ func _apply_movement():
 
 func notify_hit(amount):
 	state_machine.notify_hit(amount)
+	animated_sprite_hit.play("hit")
 
 
 func _remove():
@@ -104,3 +107,7 @@ func _on_VisibilityNotifier2D_screen_exited():
 		position.x = 1366
 	elif (position.x > 1366):
 		position.x = 0
+
+
+func _on_AnimatedSpriteHit_animation_finished():
+	animated_sprite_hit.play("idle")
