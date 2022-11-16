@@ -7,7 +7,7 @@ var musicTheme = load("res://assets/AUDIO 2/Battle of the Void.mp3")
 func _ready():
 	var music = AudioStreamPlayer2D.new()
 	music.stream = musicTheme
-	music.volume_db = -50
+	music.volume_db = -100
 	music.play()
 	add_child(music) 
 	randomize()

@@ -12,6 +12,7 @@ onready var animated_sprite_hit = $AnimatedSpriteHit
 onready var aimsight = $Aimsight
 
 onready var playerhitsound = $PlayerHit
+onready var playejumpsound = $PlayerJump
 
 const FLOOR_NORMAL := Vector2.UP
 const SNAP_DIRECTION := Vector2.DOWN

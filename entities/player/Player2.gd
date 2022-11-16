@@ -10,7 +10,7 @@ onready var floor_raycasts:Array = $FloorRaycasts.get_children()
 onready var animated_sprite = $AnimatedSprite
 onready var animated_sprite_hit = $AnimatedSpriteHit
 onready var aimsight = $Aimsight2
-onready var player2hitsound = $PlayerHit
+onready var playerhitsound = $PlayerHit
 
 const FLOOR_NORMAL := Vector2.UP
 const SNAP_DIRECTION := Vector2.DOWN
@@ -84,7 +84,7 @@ func _apply_movement():
 
 
 func notify_hit(amount):
-	player2hitsound.playing = true
+	playerhitsound.playing = true
 	state_machine.notify_hit(amount)
 	animated_sprite_hit.play("hit")
 

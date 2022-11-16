@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/qubodup-cfork-ccby3-jump.ogg-5941e6af4cd9995b07788804ffae2139.oggstr"
+
+[deps]
+
+source_file="res://assets/AUDIO EFFECT/JUMPS/qubodup-cfork-ccby3-jump.ogg"
+dest_files=[ "res://.import/qubodup-cfork-ccby3-jump.ogg-5941e6af4cd9995b07788804ffae2139.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

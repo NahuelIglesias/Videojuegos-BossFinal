@@ -2308,5 +2308,6 @@ valign = 1
 
 [node name="ThemeMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 15 )
+pitch_scale = 2.0
 
 [editable path="Environment/spikes"]
