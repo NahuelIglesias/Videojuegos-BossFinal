@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/gun_fire2.wav-5c3963d03de9131e9d994905ffece9ea.sample"
+
+[deps]
+
+source_file="res://assets/AUDIO 2/gun_fire2.wav"
+dest_files=[ "res://.import/gun_fire2.wav-5c3963d03de9131e9d994905ffece9ea.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/picnic on the lower yik.ogg-edab2f178475f47f87165f081d5b9b0c.oggstr"
+
+[deps]
+
+source_file="res://assets/AUDIO 2/picnic on the lower yik.ogg"
+dest_files=[ "res://.import/picnic on the lower yik.ogg-edab2f178475f47f87165f081d5b9b0c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

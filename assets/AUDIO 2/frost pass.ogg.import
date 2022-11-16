@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/frost pass.ogg-388e60d4c0f125b163e808370309e336.oggstr"
+
+[deps]
+
+source_file="res://assets/AUDIO 2/frost pass.ogg"
+dest_files=[ "res://.import/frost pass.ogg-388e60d4c0f125b163e808370309e336.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

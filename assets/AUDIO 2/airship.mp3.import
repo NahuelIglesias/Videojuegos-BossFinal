@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/airship.mp3-4d01fb5d62983b04fa796fb3832018e7.mp3str"
+
+[deps]
+
+source_file="res://assets/AUDIO 2/airship.mp3"
+dest_files=[ "res://.import/airship.mp3-4d01fb5d62983b04fa796fb3832018e7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/kingdom_of_icereach.mp3-a63b145b1f15718bae344bcb0658928d.mp3str"
+
+[deps]
+
+source_file="res://assets/AUDIO 2/kingdom_of_icereach.mp3"
+dest_files=[ "res://.import/kingdom_of_icereach.mp3-a63b145b1f15718bae344bcb0658928d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -11,6 +11,8 @@ onready var animated_sprite = $AnimatedSprite
 onready var animated_sprite_hit = $AnimatedSpriteHit
 onready var aimsight = $Aimsight
 
+onready var playerhitsound = $PlayerHit
+
 const FLOOR_NORMAL := Vector2.UP
 const SNAP_DIRECTION := Vector2.DOWN
 const SNAP_LENGTH := 32.0
@@ -83,8 +85,11 @@ func _apply_movement():
 
 
 func notify_hit(amount):
+	playerhitsound.playing = true
 	state_machine.notify_hit(amount)
 	animated_sprite_hit.play("hit")
+
+	
 
 
 func _remove():
