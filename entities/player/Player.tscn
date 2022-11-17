@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://entities/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://entities/player/states/WalkState.gd" type="Script" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://entities/player/states/JumpState.gd" type="Script" id=10]
 [ext_resource path="res://entities/player/states/DashState.gd" type="Script" id=11]
 [ext_resource path="res://assets/AUDIO EFFECT/EFFECTS/12_Step_wood_03.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/AUDIO EFFECT/THROW/sfx_throw.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/AUDIO EFFECT/DEAD/1.mp3" type="AudioStream" id=14]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 18.0
@@ -81,5 +83,12 @@ volume_db = 24.0
 [node name="PlayerWalk" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 12 )
 volume_db = 24.0
+
+[node name="PlayerDash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 13 )
+volume_db = 24.0
+
+[node name="PlayerDead" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 14 )
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
