@@ -11,6 +11,7 @@ onready var animated_sprite = $AnimatedSprite
 onready var animated_sprite_hit = $AnimatedSpriteHit
 onready var aimsight = $Aimsight2
 onready var playerhitsound = $PlayerHit
+onready var player_teleport_sound = $PlayerTeleporter
 
 const FLOOR_NORMAL := Vector2.UP
 const SNAP_DIRECTION := Vector2.DOWN
@@ -104,12 +105,14 @@ func is_on_floor()->bool:
 func _on_VisibilityNotifier2D_screen_exited():
 	if (position.y >= 768):
 		position.y = 0
+		player_teleport_sound.playing = true
 		
 	if (position.x <= 0):
 		position.x = 1366
+		player_teleport_sound.playing = true
 	elif (position.x > 1366):
 		position.x = 0
-
+		player_teleport_sound.playing = true
 
 func _on_AnimatedSpriteHit_animation_finished():
 	animated_sprite_hit.play("idle")
