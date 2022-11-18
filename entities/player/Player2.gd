@@ -13,10 +13,13 @@ onready var aimsight = $Aimsight2
 onready var playerhitsound = $PlayerHit
 onready var player_teleport_sound = $PlayerTeleporter
 
+onready var win_label2 = $WinLabel2
+
 const FLOOR_NORMAL := Vector2.UP
 const SNAP_DIRECTION := Vector2.DOWN
 const SNAP_LENGTH := 32.0
 const SLOPE_THRESHOLD := deg2rad(60)
+
 
 export (int) var max_health = 3
 export (float) var ACCELERATION:float = 30.0
@@ -48,7 +51,7 @@ func _ready():
 func initialize(projectile_container):
 	self.projectile_container = projectile_container
 	cannon.projectile_container = projectile_container
-
+	 
 
 func _handle_move_input():
 	move_direction = int(Input.is_action_pressed(move_right_input)) - int(Input.is_action_pressed(move_left_input))
@@ -88,7 +91,7 @@ func notify_hit(amount):
 	playerhitsound.playing = true
 	state_machine.notify_hit(amount)
 	animated_sprite_hit.play("hit")
-
+	
 
 func _remove():
 	hide()

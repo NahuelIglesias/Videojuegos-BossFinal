@@ -11,9 +11,13 @@ onready var animated_sprite = $AnimatedSprite
 onready var animated_sprite_hit = $AnimatedSpriteHit
 onready var aimsight = $Aimsight
 
+onready var win_label = $WinLabel
+
+
 onready var playerhitsound = $PlayerHit
 onready var playejumpsound = $PlayerJump
 onready var player_teleport_sound = $PlayerTeleporter
+
 
 const FLOOR_NORMAL := Vector2.UP
 const SNAP_DIRECTION := Vector2.DOWN
@@ -26,6 +30,7 @@ export (float) var H_SPEED_LIMIT:float = 400.0
 export (int) var jump_speed = 800
 export (float) var FRICTION_WEIGHT:float = 0.1
 export (int) var gravity = 30
+
 
 export (String) var move_right_input = "move_right"
 export (String) var move_left_input = "move_left"
@@ -50,6 +55,7 @@ func _ready():
 func initialize(projectile_container):
 	self.projectile_container = projectile_container
 	cannon.projectile_container = projectile_container
+
 
 
 func _handle_move_input():
@@ -90,9 +96,9 @@ func notify_hit(amount):
 	playerhitsound.playing = true
 	state_machine.notify_hit(amount)
 	animated_sprite_hit.play("hit")
-
 	
-
+	
+	
 
 func _remove():
 	hide()

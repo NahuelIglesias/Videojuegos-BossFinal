@@ -10,4 +10,3 @@ func _on_body_entered(body):
 			  
 	elif body is Player2:
 		body.notify_hit(-Player2Data.current_health)
-		

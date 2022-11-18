@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=2]
+[gd_scene load_steps=120 format=2]
 
 [ext_resource path="res://entities/player/Player1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/floor.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://GUI/GUI_layer.gd" type="Script" id=13]
 [ext_resource path="res://entities/player/Player2.tscn" type="PackedScene" id=14]
 [ext_resource path="res://assets/AUDIO 2/Battle of the Void.mp3" type="AudioStream" id=15]
+[ext_resource path="res://InterfaceUsuario.tscn" type="PackedScene" id=16]
 [ext_resource path="res://GUI/HearthTexture.tscn" type="PackedScene" id=17]
 [ext_resource path="res://enviroment/objects/IceSpikes.tscn" type="PackedScene" id=18]
 [ext_resource path="res://assets/wintertileset/png/Tiles/16.png" type="Texture" id=19]
@@ -22,6 +23,7 @@
 [ext_resource path="res://assets/wintertileset/png/Tiles/10.png" type="Texture" id=21]
 [ext_resource path="res://assets/wintertileset/png/Tiles/14.png" type="Texture" id=22]
 [ext_resource path="res://assets/wintertileset/png/Tiles/12.png" type="Texture" id=23]
+[ext_resource path="res://WinLabel.gd" type="Script" id=24]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -2201,6 +2203,7 @@ scale = Vector2( 0.932682, 0.93953 )
 texture = ExtResource( 4 )
 
 [node name="Environment" type="Node2D" parent="."]
+visible = false
 position = Vector2( -21, 0 )
 
 [node name="TileMap" type="TileMap" parent="Environment"]
@@ -2246,14 +2249,17 @@ position = Vector2( 704, 388 )
 current = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+visible = false
 position = Vector2( 70, 625 )
 max_health = 5
 
 [node name="Player2" parent="." instance=ExtResource( 14 )]
+visible = false
 position = Vector2( 1296, 631 )
 max_health = 5
 
 [node name="GUI" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource( 13 )
 hearth_scene = ExtResource( 17 )
 
@@ -2274,7 +2280,6 @@ columns = 10
 [node name="Fade" type="Node" parent="GUI"]
 
 [node name="ScreenCover" type="ColorRect" parent="GUI/Fade"]
-visible = false
 margin_right = 1398.0
 margin_bottom = 804.0
 color = Color( 0, 0, 0, 1 )
@@ -2288,11 +2293,11 @@ margin_right = 880.0
 margin_bottom = 302.0
 rect_pivot_offset = Vector2( -851, 292 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Felicitaciones JUGADOR 1, GANASTE!
 Presiona \"X\" en el joystick o \"R\" en el teclado para volver a jugar."
 align = 1
 valign = 1
+script = ExtResource( 24 )
 
 [node name="WinLabel2" type="Label" parent="GUI"]
 margin_left = 464.0
@@ -2309,5 +2314,9 @@ valign = 1
 [node name="ThemeMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 15 )
 pitch_scale = 2.0
+
+[node name="InterfaceUsuario" parent="." instance=ExtResource( 16 )]
+
+[connection signal="_iniciar_juego" from="InterfaceUsuario" to="." method="_on_InterfaceUsuario__iniciar_juego"]
 
 [editable path="Environment/spikes"]
