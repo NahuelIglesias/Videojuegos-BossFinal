@@ -8,26 +8,19 @@ onready var mensaje = $Mensajes
 onready var mensaje_timer = $MensajesTimer
 onready var start_button = $Start1Button
 onready var score_label = $StartLabel
-onready var interface = $InterfaceUsuario
 onready var win_label = $WinLabel
 onready var win_label2 = $WinLabel2
 onready var canvas = $CanvasLayer
 onready var player = $Player
 onready var player2 = $Player2
-onready var environment = $Environment
-onready var gui = $GUI
+
 
 func _ready():
 	randomize()
-	player.initialize(self)
-	player2.initialize(self)
-	gui.visible = false
-	canvas.visible = false
-	environment.visible = false
-	player.visible = false
-	player2.visible = false	
-	interface._initialize()
-		
+	music.stream = musicTheme
+	music.volume_db = 1
+	music.play()
+	add_child(music) 
 	
 	
 func _unhandled_input(event):
@@ -36,23 +29,4 @@ func _unhandled_input(event):
 	
 
 func _restart_level():
-	#interface._initialize()
 	get_tree().reload_current_scene()
-	
-
-
-
-func _on_InterfaceUsuario__iniciar_juego():
-	gui.visible = true
-	canvas.visible = true
-	environment.visible = true
-	player.visible = true
-	player2.visible = true
-	score_label = 0
-	music.stream = musicTheme
-	music.volume_db = -20
-	music.play()
-	add_child(music) 
-	
-	
-	 # Replace with function body.
