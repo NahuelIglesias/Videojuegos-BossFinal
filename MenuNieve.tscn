@@ -38,23 +38,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.00784314, 0.0352941, 0.737255, 1 )
 
+[node name="Start1Button" type="Button" parent="."]
+margin_left = 530.0
+margin_top = 525.0
+margin_right = 857.0
+margin_bottom = 595.0
+custom_fonts/font = SubResource( 5 )
+text = "START"
+icon_align = 1
+
 [node name="VBoxButtons" type="HBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -66.0
-margin_top = -215.0
-margin_right = 73.0
-margin_bottom = -145.0
+margin_left = -109.0
+margin_top = 13.0
+margin_right = 111.0
+margin_bottom = 83.0
 custom_constants/separation = 167
-
-[node name="Start1Button" type="Button" parent="VBoxButtons"]
-margin_right = 102.0
-margin_bottom = 70.0
-custom_fonts/font = SubResource( 5 )
-text = "START"
-icon_align = 1
 
 [node name="Mensajes" type="Label" parent="."]
 anchor_left = 0.5
@@ -124,4 +126,4 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[connection signal="pressed" from="VBoxButtons/Start1Button" to="." method="_on_Start1Button_pressed"]
+[connection signal="pressed" from="Start1Button" to="." method="_on_Start1Button_pressed"]

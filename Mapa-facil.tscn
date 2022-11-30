@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=2]
+[gd_scene load_steps=115 format=2]
 
 [ext_resource path="res://entities/player/Player1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/floor.png" type="Texture" id=2]
@@ -12,9 +12,8 @@
 [ext_resource path="res://assets/wintertileset/png/Tiles/15.png" type="Texture" id=10]
 [ext_resource path="res://assets/tilesets/2.png" type="Texture" id=11]
 [ext_resource path="res://assets/tilesets/4.png" type="Texture" id=12]
-[ext_resource path="res://GUI/GUI_layer.gd" type="Script" id=13]
+[ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=13]
 [ext_resource path="res://entities/player/Player2.tscn" type="PackedScene" id=14]
-[ext_resource path="res://GUI/HearthTexture.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/wintertileset/png/Tiles/16.png" type="Texture" id=19]
 [ext_resource path="res://assets/wintertileset/png/Tiles/13.png" type="Texture" id=20]
 [ext_resource path="res://assets/wintertileset/png/Tiles/10.png" type="Texture" id=21]
@@ -2246,52 +2245,4 @@ max_health = 5
 position = Vector2( 1296, 631 )
 max_health = 5
 
-[node name="GUI" type="CanvasLayer" parent="."]
-script = ExtResource( 13 )
-hearth_scene = ExtResource( 17 )
-
-[node name="HearthsContainer" type="GridContainer" parent="GUI"]
-margin_left = 147.0
-margin_top = 68.0
-margin_right = 187.0
-margin_bottom = 108.0
-columns = 10
-
-[node name="HearthsContainer2" type="GridContainer" parent="GUI"]
-margin_left = 903.0
-margin_top = 67.0
-margin_right = 943.0
-margin_bottom = 107.0
-columns = 10
-
-[node name="Fade" type="Node" parent="GUI"]
-
-[node name="ScreenCover" type="ColorRect" parent="GUI/Fade"]
-visible = false
-margin_right = 1398.0
-margin_bottom = 804.0
-color = Color( 0, 0, 0, 1 )
-
-[node name="Tween" type="Tween" parent="GUI/Fade"]
-
-[node name="WinLabel" type="Label" parent="GUI"]
-margin_left = 465.0
-margin_top = 248.0
-margin_right = 880.0
-margin_bottom = 302.0
-rect_pivot_offset = Vector2( -851, 292 )
-text = "Felicitaciones JUGADOR 1, GANASTE!
-Presiona \"X\" en el joystick o \"R\" en el teclado para volver a jugar."
-align = 1
-valign = 1
-
-[node name="WinLabel2" type="Label" parent="GUI"]
-margin_left = 464.0
-margin_top = 259.0
-margin_right = 879.0
-margin_bottom = 290.0
-rect_pivot_offset = Vector2( -851, 292 )
-text = "Felicitaciones JUGADOR 2, GANASTE!
-Presiona \"X\" en el joystick o \"R\" en el teclado para volver a jugar."
-align = 1
-valign = 1
+[node name="GUI" parent="." instance=ExtResource( 13 )]

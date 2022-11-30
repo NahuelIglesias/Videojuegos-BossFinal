@@ -29,4 +29,8 @@ func _unhandled_input(event):
 	
 
 func _restart_level():
+	#self.queue_free()
+	#if ResourceLoader.exists("res://ListLevel.tscn"):
+	#	get_tree().change_scene("res://ListLevel.tscn")
+	#get_tree().change_scene("res://ListLevel.tscn")
 	get_tree().reload_current_scene()

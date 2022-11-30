@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://GUI/GUI_layer.gd" type="Script" id=1]
+[ext_resource path="res://WinLabel.gd" type="Script" id=2]
+[ext_resource path="res://GUI/HearthTexture.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/characterSprites/Player2/sprite_5.png" type="Texture" id=4]
+[ext_resource path="res://assets/characterSprites/Player1/sprite_5.png" type="Texture" id=5]
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource( 1 )
+hearth_scene = ExtResource( 3 )
+
+[node name="HearthsContainer" type="GridContainer" parent="."]
+margin_left = 147.0
+margin_top = 68.0
+margin_right = 187.0
+margin_bottom = 108.0
+columns = 10
+
+[node name="Player1Sprite" type="Sprite" parent="."]
+position = Vector2( 95, 86 )
+scale = Vector2( 2.78125, 2.78125 )
+texture = ExtResource( 5 )
+
+[node name="HearthsContainer2" type="GridContainer" parent="."]
+margin_left = 937.0
+margin_top = 69.0
+margin_right = 977.0
+margin_bottom = 109.0
+columns = 10
+
+[node name="Player2Sprite" type="Sprite" parent="."]
+position = Vector2( 1264, 83 )
+scale = Vector2( 2.73438, 2.73438 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="Fade" type="Node" parent="."]
+
+[node name="ScreenCover" type="ColorRect" parent="Fade"]
+visible = false
+margin_right = 1398.0
+margin_bottom = 804.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Tween" type="Tween" parent="Fade"]
+
+[node name="WinLabel" type="Label" parent="."]
+visible = false
+margin_left = 465.0
+margin_top = 248.0
+margin_right = 880.0
+margin_bottom = 302.0
+rect_pivot_offset = Vector2( -851, 292 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Felicitaciones JUGADOR 1, GANASTE!
+Presiona \"X\" en el joystick o \"R\" en el teclado para volver a jugar."
+align = 1
+valign = 1
+script = ExtResource( 2 )
+
+[node name="WinLabel2" type="Label" parent="."]
+visible = false
+margin_left = 464.0
+margin_top = 259.0
+margin_right = 879.0
+margin_bottom = 290.0
+rect_pivot_offset = Vector2( -851, 292 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Felicitaciones JUGADOR 2, GANASTE!
+Presiona \"X\" en el joystick o \"R\" en el teclado para volver a jugar."
+align = 1
+valign = 1
