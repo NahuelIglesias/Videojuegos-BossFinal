@@ -47,6 +47,7 @@ var stop_on_slope:bool = true
 
 
 func _ready():
+	player_teleport_sound.volume_db = 10
 	state_machine.set_parent(self)
 	PlayerData.call_deferred("set_max_health", max_health)
 	animated_sprite_hit.play("idle")

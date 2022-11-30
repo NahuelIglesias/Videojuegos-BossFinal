@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=2]
+[gd_scene load_steps=121 format=2]
 
 [ext_resource path="res://entities/player/Player1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/floor.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://GUI/GUI_layer.gd" type="Script" id=13]
 [ext_resource path="res://entities/player/Player2.tscn" type="PackedScene" id=14]
 [ext_resource path="res://assets/AUDIO 2/Battle of the Void.mp3" type="AudioStream" id=15]
+[ext_resource path="res://assets/characterSprites/Player1/sprite_5.png" type="Texture" id=16]
 [ext_resource path="res://GUI/HearthTexture.tscn" type="PackedScene" id=17]
 [ext_resource path="res://enviroment/objects/IceSpikes.tscn" type="PackedScene" id=18]
 [ext_resource path="res://assets/wintertileset/png/Tiles/16.png" type="Texture" id=19]
@@ -23,6 +24,7 @@
 [ext_resource path="res://assets/wintertileset/png/Tiles/14.png" type="Texture" id=22]
 [ext_resource path="res://assets/wintertileset/png/Tiles/12.png" type="Texture" id=23]
 [ext_resource path="res://WinLabel.gd" type="Script" id=24]
+[ext_resource path="res://assets/characterSprites/Player2/sprite_5.png" type="Texture" id=25]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -2265,16 +2267,28 @@ margin_right = 187.0
 margin_bottom = 108.0
 columns = 10
 
+[node name="Player1Sprite" type="Sprite" parent="GUI"]
+position = Vector2( 95, 86 )
+scale = Vector2( 2.78125, 2.78125 )
+texture = ExtResource( 16 )
+
 [node name="HearthsContainer2" type="GridContainer" parent="GUI"]
-margin_left = 903.0
-margin_top = 67.0
-margin_right = 943.0
-margin_bottom = 107.0
+margin_left = 937.0
+margin_top = 69.0
+margin_right = 977.0
+margin_bottom = 109.0
 columns = 10
+
+[node name="Player2Sprite" type="Sprite" parent="GUI"]
+position = Vector2( 1264, 83 )
+scale = Vector2( 2.73438, 2.73438 )
+texture = ExtResource( 25 )
+flip_h = true
 
 [node name="Fade" type="Node" parent="GUI"]
 
 [node name="ScreenCover" type="ColorRect" parent="GUI/Fade"]
+visible = false
 margin_right = 1398.0
 margin_bottom = 804.0
 color = Color( 0, 0, 0, 1 )
@@ -2282,6 +2296,7 @@ color = Color( 0, 0, 0, 1 )
 [node name="Tween" type="Tween" parent="GUI/Fade"]
 
 [node name="WinLabel" type="Label" parent="GUI"]
+visible = false
 margin_left = 465.0
 margin_top = 248.0
 margin_right = 880.0
@@ -2295,6 +2310,7 @@ valign = 1
 script = ExtResource( 24 )
 
 [node name="WinLabel2" type="Label" parent="GUI"]
+visible = false
 margin_left = 464.0
 margin_top = 259.0
 margin_right = 879.0

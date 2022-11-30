@@ -15,7 +15,7 @@ var music = AudioStreamPlayer2D.new()
 
 signal _iniciar_juego
 
-func _initialize():
+func _ready():
 		
 	mensaje.show()
 	mensaje3.show()
