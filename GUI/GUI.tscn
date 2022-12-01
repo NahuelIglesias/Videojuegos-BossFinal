@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://GUI/GUI_layer.gd" type="Script" id=1]
 [ext_resource path="res://WinLabel.gd" type="Script" id=2]
@@ -7,6 +7,15 @@
 [ext_resource path="res://assets/characterSprites/Player1/sprite_5.png" type="Texture" id=5]
 [ext_resource path="res://assets/controls/PlaystationCircleButton.png" type="Texture" id=6]
 [ext_resource path="res://assets/controls/PlaystationXButton.png" type="Texture" id=7]
+[ext_resource path="res://assets/fonts/FONTS/Icecold.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 8 )
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -49,41 +58,45 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="WinLabel" type="Label" parent="."]
 visible = false
-margin_left = 465.0
-margin_top = 248.0
-margin_right = 880.0
-margin_bottom = 302.0
+margin_left = 215.0
+margin_top = 231.0
+margin_right = 1163.0
+margin_bottom = 362.0
 rect_pivot_offset = Vector2( -851, 292 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Felicitaciones JUGADOR 1, GANASTE!
-Presiona \"X\" en el joystick o \"R\" en el teclado para volver a jugar."
+custom_colors/font_color = Color( 0.0666667, 0.811765, 0.933333, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Felicitaciones JUGADOR 1
+
+GANASTE"
 align = 1
 valign = 1
 script = ExtResource( 2 )
 
 [node name="WinLabel2" type="Label" parent="."]
 visible = false
-margin_left = 464.0
-margin_top = 259.0
-margin_right = 879.0
-margin_bottom = 290.0
+margin_left = 254.0
+margin_top = 231.0
+margin_right = 1124.0
+margin_bottom = 417.0
 rect_pivot_offset = Vector2( -851, 292 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Felicitaciones JUGADOR 2, GANASTE!
-Presiona \"X\" en el joystick o \"R\" en el teclado para volver a jugar."
+custom_colors/font_color = Color( 1, 0.403922, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Felicitaciones JUGADOR 2
+
+GANASTE"
 align = 1
 valign = 1
 
 [node name="XButton" type="Sprite" parent="."]
-position = Vector2( 197, 643 )
+position = Vector2( 193, 555 )
 scale = Vector2( 0.436364, 0.436364 )
 texture = ExtResource( 7 )
 
 [node name="RestartLabel" type="Label" parent="."]
-margin_left = 107.0
-margin_top = 630.0
-margin_right = 522.0
-margin_bottom = 661.0
+margin_left = 103.0
+margin_top = 542.0
+margin_right = 518.0
+margin_bottom = 573.0
 rect_pivot_offset = Vector2( -851, 292 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Reiniciar juego"
@@ -91,15 +104,15 @@ align = 1
 valign = 1
 
 [node name="CircleButton" type="Sprite" parent="."]
-position = Vector2( 1181.25, 641.75 )
+position = Vector2( 1177.25, 553.75 )
 scale = Vector2( 0.434091, 0.434091 )
 texture = ExtResource( 6 )
 
 [node name="ChangeMapLabel" type="Label" parent="."]
-margin_left = 828.0
-margin_top = 635.0
-margin_right = 1243.0
-margin_bottom = 666.0
+margin_left = 824.0
+margin_top = 547.0
+margin_right = 1239.0
+margin_bottom = 578.0
 rect_pivot_offset = Vector2( -851, 292 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Volver a selección de nivel
