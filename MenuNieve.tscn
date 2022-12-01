@@ -5,11 +5,13 @@
 [ext_resource path="res://assets/fonts/FONTS/eyelevation6.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/fonts/FONTS/Magical Snow.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/fonts/FONTS/Hello Snow.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://assets/fonts/Roboto-Regular.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://assets/fonts/FONTS/Ice Mirror in Winter Kei.ttf"
 
 [sub_resource type="DynamicFont" id=5]
 size = 30
-font_data = ExtResource( 6 )
+font_data = SubResource( 6 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 120

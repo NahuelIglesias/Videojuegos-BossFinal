@@ -26,6 +26,8 @@ func _ready():
 func _unhandled_input(event):
 	if event.is_action("restart") && (PlayerData.current_health <= 0 || Player2Data.current_health <= 0):
 		_restart_level()
+	if event.is_action("back_to_map_selection") && (PlayerData.current_health <= 0 || Player2Data.current_health <= 0):
+		_go_back_to_map_selection()
 	
 
 func _restart_level():
@@ -34,3 +36,7 @@ func _restart_level():
 	#	get_tree().change_scene("res://ListLevel.tscn")
 	#get_tree().change_scene("res://ListLevel.tscn")
 	get_tree().reload_current_scene()
+
+func _go_back_to_map_selection():
+	self.queue_free()
+	get_tree().change_scene("res://ListLevel.tscn")
