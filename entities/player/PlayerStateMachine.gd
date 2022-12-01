@@ -17,4 +17,4 @@ func notify_hit(amount):
 	
 	if PlayerData.current_health == 0:
 		_change_state("dead")
-		
+		GameState.notify_player2_won()

@@ -8,6 +8,10 @@ onready var hearths_container = $HearthsContainer
 onready var hearths_container_player2 = $HearthsContainer2
 onready var win_label = $WinLabel
 onready var win_label2 = $WinLabel2
+onready var x_button = $XButton
+onready var restart_label = $RestartLabel
+onready var circle_button = $CircleButton
+onready var change_map_label = $ChangeMapLabel
 
 
 func _ready():
@@ -15,6 +19,7 @@ func _ready():
 	fade.hide()
 	win_label.hide()
 	win_label2.hide()
+	hide_inputs()
 	
 	PlayerData.connect("max_health_updated", self, "_on_player_max_health_updated")
 	PlayerData.connect("health_updated", self, "_on_player_health_updated")
@@ -79,9 +84,21 @@ func _on_player_health_updated2(amount:int, max_health:int):
 func _on_player1_won():
 	win_label.show()
 	fade_to_black()
+	show_inputs()
 	
 func _on_player2_won():
 	win_label2.show()
 	fade_to_black()
+	show_inputs()
 
+func hide_inputs():
+	x_button.hide()
+	restart_label.hide()
+	circle_button.hide()
+	change_map_label.hide()
 
+func show_inputs():
+	x_button.show()
+	restart_label.show()
+	circle_button.show()
+	change_map_label.show()
