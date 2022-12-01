@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Main.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/fonts/FONTS/eyelevation6.ttf" type="DynamicFontData" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Mapa-facil.tscn" type="PackedScene" id=6]
 [ext_resource path="res://ListLevel.gd" type="Script" id=7]
 [ext_resource path="res://assets/fonts/FONTS/Icecold.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://assets/controls/PlaystationXButton.png" type="Texture" id=9]
+[ext_resource path="res://assets/fonts/FONTS/SnowbareDemoRegular.ttf" type="DynamicFontData" id=10]
 
 [sub_resource type="DynamicFont" id=5]
 size = 30
@@ -33,6 +35,14 @@ font_data = ExtResource( 2 )
 size = 150
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=7]
+size = 30
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 50
+font_data = ExtResource( 10 )
+
 [node name="ListLevel" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -46,20 +56,20 @@ anchor_bottom = 1.0
 color = Color( 0.00784314, 0.0352941, 0.737255, 1 )
 
 [node name="Start1Button" type="Button" parent="."]
-margin_left = 751.0
-margin_top = 443.0
-margin_right = 1041.0
-margin_bottom = 513.0
+margin_left = 794.0
+margin_top = 424.0
+margin_right = 1084.0
+margin_bottom = 494.0
 custom_constants/hseparation = -1
 custom_fonts/font = SubResource( 5 )
 text = "Aconcagua"
 icon_align = 1
 
 [node name="Level 2" type="Button" parent="."]
-margin_left = 308.0
-margin_top = 441.0
-margin_right = 635.0
-margin_bottom = 511.0
+margin_left = 262.0
+margin_top = 423.0
+margin_right = 589.0
+margin_bottom = 493.0
 custom_fonts/font = SubResource( 6 )
 text = "Volcan Pocitos"
 icon_align = 1
@@ -81,10 +91,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -386.0
-margin_top = -371.0
-margin_right = 27.0
-margin_bottom = -110.0
+margin_left = -388.0
+margin_top = -403.0
+margin_right = 25.0
+margin_bottom = -142.0
 custom_fonts/font = SubResource( 1 )
 text = "ICE  "
 align = 1
@@ -98,10 +108,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -116.0
-margin_top = -386.0
-margin_right = 73.0
-margin_bottom = -56.0
+margin_left = -118.0
+margin_top = -418.0
+margin_right = 71.0
+margin_bottom = -88.0
 custom_fonts/font = SubResource( 2 )
 text = "2"
 align = 1
@@ -115,10 +125,10 @@ anchor_left = 0.69
 anchor_top = 0.51
 anchor_right = 0.69
 anchor_bottom = 0.51
-margin_left = -282.54
-margin_top = -254.68
-margin_right = 159.46
-margin_bottom = -43.68
+margin_left = -284.54
+margin_top = -286.68
+margin_right = 157.46
+margin_bottom = -75.68
 custom_fonts/font = SubResource( 3 )
 text = "YOU"
 align = 1
@@ -132,10 +142,10 @@ anchor_left = 0.69
 anchor_top = 0.51
 anchor_right = 0.69
 anchor_bottom = 0.51
-margin_left = -296.54
-margin_top = -356.68
-margin_right = 155.46
-margin_bottom = -167.68
+margin_left = -298.54
+margin_top = -388.68
+margin_right = 153.46
+margin_bottom = -199.68
 custom_fonts/font = SubResource( 4 )
 text = "SEE "
 align = 1
@@ -143,6 +153,46 @@ valign = 1
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="ColorRectLevel1" type="ColorRect" parent="."]
+margin_left = 795.0
+margin_top = 474.0
+margin_right = 1084.0
+margin_bottom = 493.0
+color = Color( 1, 0.117647, 0, 1 )
+
+[node name="ColorRectLevel2" type="ColorRect" parent="."]
+margin_left = 262.0
+margin_top = 478.0
+margin_right = 589.0
+margin_bottom = 497.0
+color = Color( 0.172549, 1, 0, 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1227, 646 )
+scale = Vector2( 0.504545, 0.504545 )
+texture = ExtResource( 9 )
+
+[node name="ConfirmLabel" type="Label" parent="."]
+margin_left = 871.0
+margin_top = 623.0
+margin_right = 1286.0
+margin_bottom = 673.0
+rect_pivot_offset = Vector2( -851, 292 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "Confirmar nivel"
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="."]
+margin_left = 515.0
+margin_top = 347.0
+margin_right = 870.0
+margin_bottom = 397.0
+custom_colors/font_color = Color( 0.517647, 0.67451, 1, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Seleccionen su mapa"
 
 [connection signal="pressed" from="Start1Button" to="." method="_on_Start1Button_pressed"]
 [connection signal="pressed" from="Level 2" to="." method="_on_Level_2_pressed"]
