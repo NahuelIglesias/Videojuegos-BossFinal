@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/2.mp3-10c756b36586ec0a521384666f84c87f.mp3str"
+
+[deps]
+
+source_file="res://assets/AUDIO EFFECT/DEAD/2.mp3"
+dest_files=[ "res://.import/2.mp3-10c756b36586ec0a521384666f84c87f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

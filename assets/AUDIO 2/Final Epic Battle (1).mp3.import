@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Final Epic Battle (1).mp3-9919fe200cc3d4965f2e1abdb60c99c6.mp3str"
+
+[deps]
+
+source_file="res://assets/AUDIO 2/Final Epic Battle (1).mp3"
+dest_files=[ "res://.import/Final Epic Battle (1).mp3-9919fe200cc3d4965f2e1abdb60c99c6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

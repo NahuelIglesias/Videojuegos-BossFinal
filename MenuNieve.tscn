@@ -1,0 +1,131 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://MenuNieve.gd" type="Script" id=1]
+[ext_resource path="res://ListLevel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/fonts/FONTS/eyelevation6.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/fonts/FONTS/Magical Snow.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/fonts/FONTS/Hello Snow.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://assets/fonts/FONTS/Ice Mirror in Winter Kei.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+font_data = SubResource( 6 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 120
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 250
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 190
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 150
+font_data = ExtResource( 3 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+scene_play = ExtResource( 2 )
+
+[node name="TextureRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.00784314, 0.0352941, 0.737255, 1 )
+
+[node name="Start1Button" type="Button" parent="."]
+margin_left = 530.0
+margin_top = 525.0
+margin_right = 857.0
+margin_bottom = 595.0
+custom_fonts/font = SubResource( 5 )
+text = "START"
+icon_align = 1
+
+[node name="VBoxButtons" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -109.0
+margin_top = 13.0
+margin_right = 111.0
+margin_bottom = 83.0
+custom_constants/separation = 167
+
+[node name="Mensajes" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -405.0
+margin_top = -203.0
+margin_right = 8.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 1 )
+text = "ICE  "
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Mensajes3" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -135.0
+margin_top = -218.0
+margin_right = 54.0
+margin_bottom = 112.0
+custom_fonts/font = SubResource( 2 )
+text = "2"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Mensajes2" type="Label" parent="."]
+anchor_left = 0.69
+anchor_top = 0.51
+anchor_right = 0.69
+anchor_bottom = 0.51
+margin_left = -301.54
+margin_top = -86.68
+margin_right = 140.46
+margin_bottom = 124.32
+custom_fonts/font = SubResource( 3 )
+text = "YOU"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Mensajes4" type="Label" parent="."]
+anchor_left = 0.69
+anchor_top = 0.51
+anchor_right = 0.69
+anchor_bottom = 0.51
+margin_left = -315.54
+margin_top = -188.68
+margin_right = 136.46
+margin_bottom = 0.320007
+custom_fonts/font = SubResource( 4 )
+text = "SEE "
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[connection signal="pressed" from="Start1Button" to="." method="_on_Start1Button_pressed"]

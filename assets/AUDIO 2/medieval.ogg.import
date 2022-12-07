@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/medieval.ogg-84d4f9609361b749c45424be55b57ddf.oggstr"
+
+[deps]
+
+source_file="res://assets/AUDIO 2/medieval.ogg"
+dest_files=[ "res://.import/medieval.ogg-84d4f9609361b749c45424be55b57ddf.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

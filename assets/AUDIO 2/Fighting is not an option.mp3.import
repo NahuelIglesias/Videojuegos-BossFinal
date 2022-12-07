@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Fighting is not an option.mp3-c4b21bce91f5bc97f282e8cba460338b.mp3str"
+
+[deps]
+
+source_file="res://assets/AUDIO 2/Fighting is not an option.mp3"
+dest_files=[ "res://.import/Fighting is not an option.mp3-c4b21bce91f5bc97f282e8cba460338b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

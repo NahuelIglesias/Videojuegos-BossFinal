@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/26_Swim_Submerged_02.wav-50bfd43b2d1afdb3445ad9662a4a8489.sample"
+
+[deps]
+
+source_file="res://assets/AUDIO EFFECT/EFFECTS/26_Swim_Submerged_02.wav"
+dest_files=[ "res://.import/26_Swim_Submerged_02.wav-50bfd43b2d1afdb3445ad9662a4a8489.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
